@@ -38,7 +38,7 @@
   watchAndParse = function(path, options, results, extensions, parser) {
     var filter, getName, parseFile, parseTree;
     getName = R.compose(removeExtension, removePrefix(path));
-    filter = R.compose(R.applyRight(R.contains, extensions), getExtension);
+    filter = R.compose(R.rPartial(R.contains, extensions), getExtension);
     parseFile = function(file) {
       var name;
       name = getName(file);
