@@ -48,7 +48,7 @@
         return parser(data, file, name);
       });
     };
-    parseTree = R.compose(R.each(parseFile), R.filter(filter), R.keys);
+    parseTree = R.compose(R.forEach(parseFile), R.filter(filter), R.keys);
     return watch.watchTree(path, options, function(file, curr, prev) {
       if (!curr && !prev) {
         return parseTree(file);

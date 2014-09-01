@@ -28,7 +28,7 @@ watchAndParse = (path, options, results, extensions, parser) ->
 		name = getName file
 		results[name] = fs.readFileAsync(file, encoding: 'utf8').then (data) -> parser data, file, name
 
-	parseTree = R.compose R.each(parseFile), R.filter(filter), R.keys
+	parseTree = R.compose R.forEach(parseFile), R.filter(filter), R.keys
 
 	watch.watchTree path, options, (file, curr, prev) ->
 		if !curr && !prev
