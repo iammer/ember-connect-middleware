@@ -22,7 +22,7 @@ debug = R.flip(R.tap)(console.log)
 watchAndParse = (path, options, results, extensions, parser) ->
 	getName = R.compose removeExtension, removePrefix path
 
-	filter = R.compose(R.applyRight(R.contains,extensions),getExtension)
+	filter = R.compose(R.rPartial(R.contains,extensions),getExtension)
 
 	parseFile = (file) ->
 		name = getName file
