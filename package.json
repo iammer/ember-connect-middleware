@@ -19,8 +19,8 @@
     "grunt": "^0.4.5",
     "grunt-contrib-coffee": "^0.11.1"
   },
-  "main": 'index.js',
-  "homepage": "https://github.com/iammer/ember-connect-middleware"
+  "main": "index.js",
+  "homepage": "https://github.com/iammer/ember-connect-middleware",
   "repository": {
       "type": "git",
       "url": "https://github.com/iammer/ember-connect-middleware.git"
